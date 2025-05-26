@@ -5,12 +5,13 @@ import {
   clearErrors,
   errorSelector,
   registerUserThunk
-} from '@services/slices/userSlice';
+} from '@services/slices/userSlice/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 export const Register: FC = () => {
   const dispatch = useDispatch();
   const error = useSelector(errorSelector);
-
+  const navigate = useNavigate();
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +24,11 @@ export const Register: FC = () => {
         email,
         password
       })
-    );
+    ).then((action) => {
+      if (registerUserThunk.fulfilled.match(action)) {
+        navigate('/');
+      }
+    });
   };
 
   useEffect(() => {

@@ -22,8 +22,8 @@ import {
 } from '@pages';
 import { useEffect } from 'react';
 import { useDispatch } from '@services/store';
-import { getIngredientsThunk } from '@services/slices/ingredientsSlice';
-import { getUserThunk } from '@services/slices/userSlice';
+import { getIngredientsThunk } from '@services/slices/ingredientsSlice/ingredientsSlice';
+import { getUserThunk } from '@services/slices/userSlice/userSlice';
 
 const App = () => {
   const dispatch = useDispatch();

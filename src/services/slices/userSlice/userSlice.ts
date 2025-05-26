@@ -7,10 +7,10 @@ import {
   logoutApi,
   registerUserApi,
   updateUserApi
-} from '@api';
+} from '../../../utils/burger-api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { TOrder, TUser } from '../../utils/types';
-import { deleteCookie, setCookie } from '../../utils/cookie';
+import { TOrder, TUser } from '../../../utils/types';
+import { deleteCookie, setCookie } from '../../../utils/cookie';
 
 export const loginUserThunk = createAsyncThunk(
   'users/loginUser',
@@ -62,7 +62,7 @@ export interface UserState {
   error: string | null;
 }
 
-const initialState: UserState = {
+export const initialState: UserState = {
   isAuthenticated: false,
   loginUserRequest: false,
   user: null,
