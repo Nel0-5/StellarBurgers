@@ -41,6 +41,7 @@ export const fetchWithRefresh = async <T>(
 ) => {
   try {
     const res = await fetch(url, options);
+    console.log(res);
     return await checkResponse<T>(res);
   } catch (err) {
     if ((err as { message: string }).message === 'jwt expired') {
@@ -80,7 +81,7 @@ export const getIngredientsApi = () =>
     });
 
 export const getFeedsApi = () =>
-  fetch(`${URL}/orders/all`)
+  fetch(`https://norma.nomoreparties.space/api/orders/all`)
     .then((res) => checkResponse<TFeedsResponse>(res))
     .then((data) => {
       if (data?.success) return data;
@@ -115,6 +116,7 @@ export const orderBurgerApi = (data: string[]) =>
       ingredients: data
     })
   }).then((data) => {
+    console.log(data);
     if (data?.success) return data;
     return Promise.reject(data);
   });

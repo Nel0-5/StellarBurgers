@@ -34,8 +34,7 @@ export const LoginUI: FC<LoginUIProps> = ({
               name='email'
               error={false}
               errorText=''
-              size='default'
-            />
+              size='default' onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            />
           </div>
           <div className='pb-6'>
             <PasswordInput

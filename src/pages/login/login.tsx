@@ -5,7 +5,7 @@ import {
   clearErrors,
   errorSelector,
   loginUserThunk
-} from '@services/slices/userSlice';
+} from '@services/slices/userSlice/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 export const Login: FC = () => {
@@ -18,8 +18,10 @@ export const Login: FC = () => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(loginUserThunk({ email, password })).then(() => {
-      navigate('/');
+    dispatch(loginUserThunk({ email, password })).then((action) => {
+      if (loginUserThunk.fulfilled.match(action)) {
+        navigate('/');
+      }
     });
   };
 

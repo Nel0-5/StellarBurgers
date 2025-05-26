@@ -36,8 +36,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               name='name'
               error={false}
               errorText=''
-              size='default'
-            />
+              size='default' onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            />
           </div>
           <div className='pb-6'>
             <Input
@@ -48,8 +47,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               name={'email'}
               error={false}
               errorText=''
-              size={'default'}
-            />
+              size={'default'} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            />
           </div>
           <div className='pb-6'>
             <PasswordInput

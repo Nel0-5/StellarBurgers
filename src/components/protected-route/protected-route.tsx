@@ -4,7 +4,7 @@ import { Preloader } from '@ui/preloader';
 import {
   isAuthCheckedSelector,
   loginUserRequestSelector
-} from '@services/slices/userSlice';
+} from '@services/slices/userSlice/userSlice';
 import React from 'react';
 
 type ProtectedRouteProps = {
