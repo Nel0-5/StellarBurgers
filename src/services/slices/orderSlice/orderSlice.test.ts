@@ -1,13 +1,11 @@
-import order, { orderBurgerThunk, clearOrder } from './orderSlice';
+import order, {
+  orderBurgerThunk,
+  clearOrder,
+  initialState
+} from './orderSlice';
 import { TOrder } from '../../../utils/types';
 
 describe('Редьюсер заказов', () => {
-  const initialState = {
-    order: null,
-    isOrderLoading: false,
-    error: null
-  };
-
   const mockOrder: TOrder = {
     _id: '643d69a5c3f7b9001cfa093c',
     ingredients: ['60d3b41abdacab0026a733c6', '60d3b41abdacab0026a733cc'],
@@ -80,5 +78,5 @@ describe('Редьюсер заказов', () => {
         expect(state.order).toBeNull();
       });
     });
-  })
+  });
 });

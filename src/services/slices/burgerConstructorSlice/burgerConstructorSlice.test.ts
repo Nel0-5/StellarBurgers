@@ -3,20 +3,13 @@ import {
   upIngredient,
   downIngredient,
   removeIngredient,
-  clearBurgerConstructor
+  clearBurgerConstructor,
+  initialState
 } from './burgerConstructorSlice';
 import burgerConstructor from './burgerConstructorSlice';
 import { TIngredient } from '../../../utils/types';
 
 describe('Редьюсер конструктора бургера', () => {
-  const initialState = {
-    burgerConstructor: {
-      bun: null,
-      ingredients: []
-    },
-    error: null
-  };
-
   const mockBun: TIngredient = {
     _id: '60d3b41abdacab0026a733c6',
     name: 'Краторная булка N-200i',

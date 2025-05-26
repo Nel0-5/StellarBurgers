@@ -5,20 +5,12 @@ import user, {
   registerUserThunk,
   updateUserThunk,
   getOrdersThunk,
-  clearErrors
+  clearErrors,
+  initialState
 } from './userSlice';
 import { TOrder, TUser } from '../../../utils/types';
 
 describe('Редьюсер пользователя', () => {
-  const initialState = {
-    isAuthenticated: false,
-    loginUserRequest: false,
-    user: null,
-    orders: [],
-    ordersRequest: false,
-    error: null
-  };
-
   const mockUser: TUser = {
     name: 'Test User',
     email: 'test@example.com'

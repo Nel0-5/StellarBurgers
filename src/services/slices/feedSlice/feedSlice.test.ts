@@ -1,17 +1,11 @@
-import feed, { getFeedsThunk, getOrderByNumberThunk } from './feedSlice';
+import feed, {
+  getFeedsThunk,
+  getOrderByNumberThunk,
+  initialState
+} from './feedSlice';
 import { TOrder } from '../../../utils/types';
 
 describe('Редьюсер ленты заказов', () => {
-  const initialState = {
-    orders: [],
-    isFeedsLoading: false,
-    order: null,
-    isOrderLoading: false,
-    total: 0,
-    totalToday: 0,
-    error: null
-  };
-
   const mockOrder: TOrder = {
     _id: '1',
     ingredients: ['60d3b41abdacab0026a733c6', '60d3b41abdacab0026a733cc'],
@@ -38,7 +32,7 @@ describe('Редьюсер ленты заказов', () => {
     });
   });
 
-  describe ('Асинхронные экшены:', () => {
+  describe('Асинхронные экшены:', () => {
     describe('getFeedsThunk', () => {
       test('Должен устанавливать isFeedsLoading в true при pending', () => {
         const action = { type: getFeedsThunk.pending.type };

@@ -1,13 +1,10 @@
-import ingredients, { getIngredientsThunk } from './ingredientsSlice';
+import ingredients, {
+  getIngredientsThunk,
+  initialState
+} from './ingredientsSlice';
 import { TIngredient } from '../../../utils/types';
 
 describe('Редьюсер ингредиентов', () => {
-  const initialState = {
-    ingredients: [],
-    isIngredientsLoading: false,
-    error: null
-  };
-
   const mockIngredients: TIngredient[] = [
     {
       _id: '60d3b41abdacab0026a733c6',
@@ -78,5 +75,5 @@ describe('Редьюсер ингредиентов', () => {
         expect(state.ingredients).toEqual([]);
       });
     });
-  })
+  });
 });
